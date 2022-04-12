@@ -1,0 +1,328 @@
+:root {
+    --body-bg-color: #dce4e3;
+    --green: #18c29c;
+    --light-green: #8ed7c6;
+    --light-grey: #dce4e3;
+    --text-color: #084236;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+div#sidebar {
+    background-color: var(--green);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75px;
+    padding: 10px 15px;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+
+div#sidebar.active {
+    width: 250px;
+}
+
+div#sidebar div#logo-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#sidebar div#logo-menu div#logo {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+div#sidebar.active div#logo-menu div#logo {
+    opacity: 1;
+    pointer-events: none;
+}
+
+div#sidebar div#logo-menu i#btn {
+    position: absolute;
+    left: 50%;
+    font-size: 30px;
+    transform: translateX(-50%);
+}
+
+div#sidebar.active div#logo-menu i#btn {
+    left: 89%;
+}
+
+div#sidebar ul#nav-list {
+    margin-top: 20px;
+}
+
+div#sidebar ul#nav-list li {
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    margin-top: 10px;
+}
+
+div#sidebar ul#nav-list li#first-li {
+    display: flex;
+    align-items: center;
+}
+
+div#sidebar ul#nav-list li i#search {
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    padding-left: 15px;
+    transition: all 0.4s ease;
+    color: var(--text-color);
+}
+
+div#sidebar ul#nav-list li i#search:hover {
+    cursor: pointer;
+}
+
+div#sidebar ul#nav-list li input#input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 50px;
+    font-size: 18px;
+    background-color: var(--light-green);
+}
+
+div#sidebar ul#nav-list li input#input::placeholder {
+    color: var(--text-color);
+}
+
+div#sidebar ul#nav-list li a {
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    padding-left: 10px;
+    border-radius: 12px;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+div#sidebar ul#nav-list li a:hover {
+    background-color: var(--light-green);
+}
+
+div#sidebar ul#nav-list li a img {
+    margin-right: 10px;
+    text-align: center;
+}
+
+div#sidebar ul#nav-list li a span.links-name {
+    font-weight: 400;
+    font-size: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+div#sidebar.active ul#nav-list li a span.links-name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+div#sidebar ul#nav-list li span.tooltip {
+    position: absolute;
+    top: 0;
+    left: 125px;
+    height: 35px;
+    width: 125px;
+    background-color: var(--light-green);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+div#sidebar.active ul#nav-list li span.tooltip {
+    display: none;
+}
+
+div#sidebar ul#nav-list li:hover span.tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+div#sidebar div#profile-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+div#sidebar div#profile-content div#profile {
+    position: relative;
+    padding: 10px 5px;
+    height: 60px;
+    background-color: var(--light-green);
+    transition: all 0.5s ease;
+}
+
+div#sidebar div#profile-content div#profile div#profile-details {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+div#sidebar.active div#profile-content div#profile div#profile-details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+div#sidebar div#profile-content div#profile div#profile-details img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+div#sidebar div#profile-content div#profile div#profile-details div#name-job {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#sidebar div#profile-content div#profile div#profile-details div#name-job span#name {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+div#sidebar div#profile-content div#profile div#profile-details div#name-job span#job {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+div#sidebar div#profile-content div#profile i#logout {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    transition: all 0.5s ease;
+    background-color: var(--light-green);
+}
+
+div#sidebar div#profile-content div#profile i#logout:hover {
+    cursor: pointer;
+}
+
+div#sidebar.active div#profile-content div#profile i#logout {
+    left: 89%;
+    background: none;
+}
+
+div#home-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    padding-left: 10px;
+    transition: all 0.5s ease;
+}
+
+div#home-content span#text {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--text-color);
+}
+
+div#sidebar.active ~ div#home-content {
+    width: calc(100% - 250px);
+    left: 250px;
+}
+
+/* CSS Responsive */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+ 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+ 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}

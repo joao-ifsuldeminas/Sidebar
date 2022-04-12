@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sidebar</title>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="logo-menu">
+            <div id="logo">
+                <img src="assets\logo.svg" alt="logo">
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul id="nav-list">
+            <li id="first-li">
+                <i class='bx bx-search' id="search"></i>
+                <input type="text" name="input-search" id="input" placeholder="Buscar">
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets\grid.svg" alt="dashboard">
+                    <span class="links-name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets\pet.svg" alt="pets">
+                    <span class="links-name">Pets</span>
+                </a>
+                <span class="tooltip">Pets</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets\user.svg" alt="user">
+                    <span class="links-name">Clientes</span>
+                </a>
+                <span class="tooltip">Clientes</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets\vet.svg" alt="vets">
+                    <span class="links-name">Vets</span>
+                </a>
+                <span class="tooltip">Vets</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets\settings.svg" alt="settings">
+                    <span class="links-name">Ajustes</span>
+                </a>
+                <span class="tooltip">Ajustes</span>
+            </li>
+        </ul>
+        <div id="profile-content">
+            <div id="profile">
+                <div id="profile-details">
+                    <img src="assets\photo.jpg" alt="profile-photo">
+                    <div id="name-job">
+                        <span id="name">João Pedro</span>
+                        <span id="job">Técnico em informática</span>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="logout"></i>
+            </div>
+        </div>
+    </div>
+    <div id="home-content">
+        <span id="text">Dashboard</span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
